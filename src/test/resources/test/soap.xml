@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Body>
+        <soapenv:Fault>
+            <faultcode xmlns:ns1="urn:fault.partner.soap.sforce.com">ns1:INVALID_LOGIN</faultcode>
+            <faultstring>INVALID_LOGIN: user not valid</faultstring>
+            <detail>
+                <sf:fault xsi:type="sf:LoginFault" xmlns:sf="urn:fault.partner.soap.sforce.com">
+                    <sf:exceptionCode>INVALID_LOGIN</sf:exceptionCode>
+                    <sf:exceptionMessage>user not valid</sf:exceptionMessage>
+                </sf:fault>
+            </detail>
+        </soapenv:Fault>
+    </soapenv:Body>
+</soapenv:Envelope>

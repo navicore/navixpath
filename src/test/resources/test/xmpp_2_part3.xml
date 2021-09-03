@@ -1,0 +1,13 @@
+top now</body>
+</message>
+<message from='ed@edsweeney.net'
+to='ed@blazebot.com'>
+    <subject>Hi</subject>
+    <body>Part 3  middle now</body>
+</message>
+<message from='ed@edsweeney.net'
+to='ed@blazebot.com'>
+    <subject>Hi</subject>
+    <body>Part 3  Going now</body> 
+</message>
+</stream:stream>

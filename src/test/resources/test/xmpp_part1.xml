@@ -1,0 +1,6 @@
+<stream:stream xmlns:stream='http://etherx.jaber.org/streams' id='3C0FB738' xmlns='jabber:client'>
+    <message from='ed@edsweeney.net'
+      to='ed@blazebot.com'>
+        <subject>Hi</subject>
+        <body>What is new?  Not much new here.  How long is this message?</body>
+    </message>

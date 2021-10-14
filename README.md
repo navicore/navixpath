@@ -7,7 +7,7 @@ A Library for Extracting Data From XML
 # Overview
 
 This library was the "navicore data" package as the "data" utility of the
-"navimatrix" project (thanks Henry).
+"navimatrix" project (thanks Henry) back in 2004.
 
 After many years I'm working with XML again and remember this lib was my
 favorite way to work with XML.

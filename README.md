@@ -1,5 +1,8 @@
-NAVIPATH Library for Extracting Data From XML
-=====================
+NAVIPATH
+========
+
+A Library for Extracting Data From XML
+----------------
 
 # Overview
 

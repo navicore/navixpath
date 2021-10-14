@@ -1,4 +1,4 @@
-NAVIPATH
+NAVIXPATH
 ========
 
 A Library for Extracting Data From XML

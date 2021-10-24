@@ -25,7 +25,7 @@ jobs:
           ${{ runner.os }}-maven-
 
     - name: Update Version
-      run: mvn versions:set -DnewVersion=${{ github.ref }}
+      run: mvn versions:set -DnewVersion=${GITHUB_REF/refs\/tags\//}
 
     - name: Build and Test
       run: mvn --batch-mode --update-snapshots clean verify

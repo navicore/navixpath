@@ -50,4 +50,5 @@ jobs:
       with:
         servers: '[{"id": "ossrh", "username": "${{secrets.SONATYPE_USERNAME}}", "password": "${{secrets.SONATYPE_PASSWORD}}"}]'
     
-
+    - name: Deploy a new version to maven central
+      run: mvnw deploy -B -DskipTests -DskipExamples -Dgpg.keyname=${{secrets.GPG_KEYNAME}} -Dgpg.passphrase=${{secrets.GPG_PASSPHRASE}}

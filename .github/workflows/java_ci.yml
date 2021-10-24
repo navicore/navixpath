@@ -32,7 +32,7 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-maven-
     - name: Build and Test
-      run: mvnw clean verify
+      run: mvn clean verify
 
     - name: Import GPG Owner Trust
       run: echo ${{secrets.GPG_OWNERTRUST}} | base64 --decode | gpg --import-ownertrust

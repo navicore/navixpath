@@ -30,10 +30,8 @@ jobs:
         key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
         restore-keys: |
           ${{ runner.os }}-maven-
-    - name: Prepare mvnw
-      run: chmod +x ./mvnw
     - name: Build and Test
-      run: ./mvnw clean verify
+      run: mvnw clean verify
 
     - name: Import GPG Owner Trust
       run: echo ${{secrets.GPG_OWNERTRUST}} | base64 --decode | gpg --import-ownertrust

@@ -34,6 +34,9 @@ jobs:
     - name: Build and Test
       run: mvn clean verify
 
+    - name: Verify GPG Install
+      run: gpg --version
+
     - name: Import GPG Owner Trust
       run: echo ${{secrets.GPG_OWNERTRUST}} | base64 --decode | gpg --import-ownertrust
 

@@ -52,5 +52,6 @@ jobs:
     
     - name: Deploy a new version to maven central
       run: mvn clean deploy -B -DskipTests -DskipExamples -Dgpg.keyname=${{secrets.GPG_KEYNAME}} -Dgpg.passphrase=${{secrets.GPG_PASSPHRASE}}
-    - name: Release
-      run: mvn nexus-staging:release
+    - name: release
+      run: mvn release
+

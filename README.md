@@ -14,6 +14,23 @@ favorite way to work with XML.
 
 # Usage
 
+## Input File
+```xml
+<stream:stream xmlns:stream='http://etherx.jaber.org/streams' id='3C0FB738' xmlns='jabber:client'>
+    <message from='ed@edsweeney.net'
+      to='ed@blazebot.com'>
+        <subject interesting='yes'>Hi</subject>
+        <body>What is new?</body>
+        <attatchments>
+            <filename>fileone.txt</filename>
+            <filename age='1001'>filetwo.txt</filename>
+            <filename age='2'>filethree.txt</filename>
+        </attatchments>
+    </message>
+</stream:stream>
+```
+
+## Processing Code
 ```java
 InputStream res = this.getClass().getResourceAsStream("/test/test2.xml");
 Assert.assertNotNull(res);

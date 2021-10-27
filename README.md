@@ -36,70 +36,70 @@ InputStream res = this.getClass().getResourceAsStream("/test/test2.xml");
 Assert.assertNotNull(res);
 DataObject data = XmlCoder.decode(new InputStreamReader(res));
 
-Assert.assertNotNull("xpath returned null", data.get("/message/subject"));
+Assert.assertNotNull("err", data.get("/message/subject"));
 
-Assert.assertEquals("wrong root node name",
+Assert.assertEquals("err",
                     "stream",
                     data.getDataObject("/").getType().getName());
 
-Assert.assertEquals("wrong . node",
+Assert.assertEquals("err",
                     data,
                     data.getDataObject("."));
 
-Assert.assertEquals("wrong . node",
+Assert.assertEquals("err",
                     data,
                     data.getDataObject("/message/.."));
 
-Assert.assertEquals("wrong xpath return data", "Hi", data.getString("/message/subject"));
+Assert.assertEquals("err", "Hi", data.getString("/message/subject"));
 
-Assert.assertEquals("position() broken",
+Assert.assertEquals("err",
                     "filethree.txt",
                     data.getString("/message/attatchments/filename[position() = 3]"));
 
-Assert.assertEquals("reletive path broken",
+Assert.assertEquals("err",
                     "filethree.txt",
                     data.getDataObject("./message/attatchments").getString("./filename[position() = 3]"));
 
-Assert.assertEquals("attribute path broken",
+Assert.assertEquals("err",
                     1001,
                     data.getLong("/message/attatchments/filename[position() = 2]/@age"));
 
-Assert.assertEquals("attribute path broken",
+Assert.assertEquals("err",
                     "ed@edsweeney.net",
                     data.getString("/message/@from"));
 
 DataObject leaf = data.getDataObject("./message/attatchments/filename[position() = 1]");
-Assert.assertEquals("attribute path broken",
+Assert.assertEquals("err",
                     "ed@edsweeney.net",
                     leaf.getString("/message/@from"));
 
 leaf = data.getDataObject("message/attatchments/filename[position() = 1]");
-Assert.assertEquals("attribute path broken",
+Assert.assertEquals("err",
                     "ed@edsweeney.net",
                     leaf.getString("/message/@from"));
 
-Assert.assertEquals("attribute path broken",
+Assert.assertEquals("err",
                     "filethree.txt",
                     data.getString("/message/attatchments/filename[@age = 2]"));
 
-Assert.assertEquals("attribute path broken",
+Assert.assertEquals("err",
                     "filethree.txt",
                     data.getString("/message[@to = 'ed@blazebot.com']/attatchments/filename[@age = 2]"));
 
-Assert.assertEquals("attribute path broken",
+Assert.assertEquals("err",
                     "filetwo.txt",
                     data.getString("//filename[@age = 1001]"));
 
-Assert.assertNull("attribute path broken",
+Assert.assertNull("err",
                   data.getString("//filename[@age = 9999]"));
 
 List list = data.getList("//filename");
-Assert.assertEquals("wrong count of filename(s)", 3, list.size());
+Assert.assertEquals("err", 3, list.size());
 
-Assert.assertEquals("count() broken", 3,
+Assert.assertEquals("err", 3,
                     (long)data.getDouble("count(//filename)"));
 
-Assert.assertEquals("count() broken",
+Assert.assertEquals("err",
                     1,
                     (long)data.getDouble("count(//subject)"));
 ```

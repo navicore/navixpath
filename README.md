@@ -15,85 +15,76 @@ favorite way to work with XML.
 # Usage
 
 ```java
-public void testPathQuery() {
-    try {
-        InputStream res = this.getClass().getResourceAsStream("/test/test2.xml");
-        Assert.assertNotNull(res);
-        DataObject data = XmlCoder.decode(new InputStreamReader(res));
+InputStream res = this.getClass().getResourceAsStream("/test/test2.xml");
+Assert.assertNotNull(res);
+DataObject data = XmlCoder.decode(new InputStreamReader(res));
 
-        Assert.assertNotNull("xpath returned null", data.get("/message/subject"));
+Assert.assertNotNull("xpath returned null", data.get("/message/subject"));
 
-        Assert.assertEquals("wrong root node name",
-                            "stream",
-                            data.getDataObject("/").getType().getName());
+Assert.assertEquals("wrong root node name",
+                    "stream",
+                    data.getDataObject("/").getType().getName());
 
-        Assert.assertEquals("wrong . node",
-                            data,
-                            data.getDataObject("."));
+Assert.assertEquals("wrong . node",
+                    data,
+                    data.getDataObject("."));
 
-        Assert.assertEquals("wrong . node",
-                            data,
-                            data.getDataObject("/message/.."));
+Assert.assertEquals("wrong . node",
+                    data,
+                    data.getDataObject("/message/.."));
 
-        Assert.assertEquals("wrong xpath return data", "Hi", data.getString("/message/subject"));
+Assert.assertEquals("wrong xpath return data", "Hi", data.getString("/message/subject"));
 
-        Assert.assertEquals("position() broken",
-                            "filethree.txt",
-                            data.getString("/message/attatchments/filename[position() = 3]"));
+Assert.assertEquals("position() broken",
+                    "filethree.txt",
+                    data.getString("/message/attatchments/filename[position() = 3]"));
 
-        Assert.assertEquals("reletive path broken",
-                            "filethree.txt",
-                            data.getDataObject("./message/attatchments").getString("./filename[position() = 3]"));
+Assert.assertEquals("reletive path broken",
+                    "filethree.txt",
+                    data.getDataObject("./message/attatchments").getString("./filename[position() = 3]"));
 
-        Assert.assertEquals("attribute path broken",
-                            1001,
-                            data.getLong("/message/attatchments/filename[position() = 2]/@age"));
+Assert.assertEquals("attribute path broken",
+                    1001,
+                    data.getLong("/message/attatchments/filename[position() = 2]/@age"));
 
-        Assert.assertEquals("attribute path broken",
-                            "ed@edsweeney.net",
-                            data.getString("/message/@from"));
+Assert.assertEquals("attribute path broken",
+                    "ed@edsweeney.net",
+                    data.getString("/message/@from"));
 
-        DataObject leaf = data.getDataObject("./message/attatchments/filename[position() = 1]");
-        Assert.assertEquals("attribute path broken",
-                            "ed@edsweeney.net",
-                            leaf.getString("/message/@from"));
+DataObject leaf = data.getDataObject("./message/attatchments/filename[position() = 1]");
+Assert.assertEquals("attribute path broken",
+                    "ed@edsweeney.net",
+                    leaf.getString("/message/@from"));
 
-        leaf = data.getDataObject("message/attatchments/filename[position() = 1]");
-        Assert.assertEquals("attribute path broken",
-                            "ed@edsweeney.net",
-                            leaf.getString("/message/@from"));
+leaf = data.getDataObject("message/attatchments/filename[position() = 1]");
+Assert.assertEquals("attribute path broken",
+                    "ed@edsweeney.net",
+                    leaf.getString("/message/@from"));
 
-        Assert.assertEquals("attribute path broken",
-                            "filethree.txt",
-                            data.getString("/message/attatchments/filename[@age = 2]"));
+Assert.assertEquals("attribute path broken",
+                    "filethree.txt",
+                    data.getString("/message/attatchments/filename[@age = 2]"));
 
-        Assert.assertEquals("attribute path broken",
-                            "filethree.txt",
-                            data.getString("/message[@to = 'ed@blazebot.com']/attatchments/filename[@age = 2]"));
+Assert.assertEquals("attribute path broken",
+                    "filethree.txt",
+                    data.getString("/message[@to = 'ed@blazebot.com']/attatchments/filename[@age = 2]"));
 
-        Assert.assertEquals("attribute path broken",
-                            "filetwo.txt",
-                            data.getString("//filename[@age = 1001]"));
+Assert.assertEquals("attribute path broken",
+                    "filetwo.txt",
+                    data.getString("//filename[@age = 1001]"));
 
-        Assert.assertNull("attribute path broken",
-                          data.getString("//filename[@age = 9999]"));
+Assert.assertNull("attribute path broken",
+                  data.getString("//filename[@age = 9999]"));
 
-        List list = data.getList("//filename");
-        Assert.assertEquals("wrong count of filename(s)", 3, list.size());
+List list = data.getList("//filename");
+Assert.assertEquals("wrong count of filename(s)", 3, list.size());
 
-        Assert.assertEquals("count() broken", 3,
-                            (long)data.getDouble("count(//filename)"));
+Assert.assertEquals("count() broken", 3,
+                    (long)data.getDouble("count(//filename)"));
 
-        Assert.assertEquals("count() broken",
-                            1,
-                            (long)data.getDouble("count(//subject)"));
-
-    } catch (Exception e) {
-        e.printStackTrace();
-        fail(e.toString());
-    }
-}
-
+Assert.assertEquals("count() broken",
+                    1,
+                    (long)data.getDouble("count(//subject)"));
 ```
 
 # Repositories

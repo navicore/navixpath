@@ -358,7 +358,6 @@ public class SdoTestCase extends TestCase {
 
             Assert.assertEquals("wrong xpath return data", "Hi", data.getString("/message/subject"));
 
-            ///*
             Assert.assertEquals("position() broken",
                                 "filethree.txt",
                                 data.getString("/message/attatchments/filename[position() = 3]"));
@@ -409,7 +408,6 @@ public class SdoTestCase extends TestCase {
             Assert.assertEquals("count() broken",
                                 1,
                                 (long)data.getDouble("count(//subject)"));
-            //*/
 
         } catch (Exception e) {
             e.printStackTrace();

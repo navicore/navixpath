@@ -46,7 +46,7 @@ jobs:
       run: rm -rf ~/.m2/settings.xml
 
     - name: Create settings.xml
-      uses: s4u/maven-settings-action@v1
+      uses: s4u/maven-settings-action@v2
       with:
         servers: '[{"id": "ossrh", "username": "${{ secrets.SONATYPE_USERNAME }}", "password": "${{ secrets.SONATYPE_PASSWORD }}"}]'
     

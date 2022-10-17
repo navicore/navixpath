@@ -5,9 +5,9 @@ on:
     branches: 
     - main
     tags:
-    - v0.*
-    - v1.*
-    - v2.*
+    - 0.*
+    - 1.*
+    - 2.*
   pull_request:
     branches: 
     - main

@@ -14,7 +14,7 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '18'
-        distribution: 'adopt'
+        distribution: 'zulu'
     
     - name: Cache .m2
       uses: actions/cache@v3
@@ -36,8 +36,7 @@ jobs:
     - name: Verify b64 util
       run: base64 --version
 
-    - name: Import GPG Owner Trust
-      run: echo "${{ secrets.GPG_OWNERTRUST }}" | base64 --decode | gpg --import-ownertrust
+    - name: Import GPG Owner Trust run: echo "${{ secrets.GPG_OWNERTRUST }}" | base64 --decode | gpg --import-ownertrust
 
     - name: Import GPG key
       run: echo "${{ secrets.GPG_SECRET_KEYS }}" | base64 --decode | gpg --import --no-tty --batch --yes

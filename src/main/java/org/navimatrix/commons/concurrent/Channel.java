@@ -1,3 +1,4 @@
+package org.navimatrix.commons.concurrent;
 /*
   File: Channel.java
 
@@ -12,7 +13,6 @@
   25aug1998  dl               added peek
 */
 
-package org.navimatrix.commons.concurrent;
 //package EDU.oswego.cs.dl.util.concurrent;
 
 /** 

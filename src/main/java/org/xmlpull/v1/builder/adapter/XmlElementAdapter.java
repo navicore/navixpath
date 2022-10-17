@@ -9,8 +9,6 @@ import org.xmlpull.v1.builder.XmlDocument;
 import org.xmlpull.v1.builder.XmlElement;
 import org.xmlpull.v1.builder.XmlNamespace;
 
-/**
- */
 public class XmlElementAdapter implements XmlElement
 {
     

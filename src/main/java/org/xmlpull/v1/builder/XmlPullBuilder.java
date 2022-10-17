@@ -28,13 +28,6 @@ import org.xmlpull.v1.builder.impl.XmlPullBuilderImpl;
 
 // XmlDocument doc =  builder.parseUrl( url );
 
-/**
- * By default builder is using non-validating pull parser with next() method
- * without namespaces to build tree consisting only of XmlDocument, XmlElemenet
- * and String nodes. Additional options are available to change builder behaviour
- * and to generate any deseired subset of
- * <a href="<a href="http://www.w3.org/TR/xml-infoset/">XML Information Set</a>
- */
 public abstract class XmlPullBuilder
 {
     

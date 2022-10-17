@@ -4,8 +4,6 @@ import org.xmlpull.v1.builder.XmlComment;
 import org.xmlpull.v1.builder.XmlElement;
 import org.xmlpull.v1.builder.XmlContainer;
 
-/**
- */
 public class XmlCommentImpl implements XmlComment
 {
     private XmlContainer owner_;

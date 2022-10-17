@@ -1,3 +1,4 @@
+package org.navimatrix.commons.concurrent;
 /*
   File: BoundedBuffer.java
 
@@ -14,7 +15,6 @@
    5May1999  dl               replace % with conditional (slightly faster)
 */
 
-package org.navimatrix.commons.concurrent;
 //package EDU.oswego.cs.dl.util.concurrent;
 
 /**

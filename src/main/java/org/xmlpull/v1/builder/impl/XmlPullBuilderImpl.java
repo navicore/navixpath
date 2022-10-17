@@ -18,12 +18,6 @@ import org.xmlpull.v1.builder.XmlNamespace;
 import org.xmlpull.v1.builder.XmlPullBuilder;
 import org.xmlpull.v1.builder.XmlSerializable;
 
-//TODO: equals() and hascode()
-//TODO: think about how to do gernali XmlSerialziable (to simplify serialzie()
-//TODO: in XmlElement use String namespaceName and do not use XmlNamespace namespace (except for getNamespace()?
-//           NOTE: that XML infoset requires prefix informatio ot be present even if not needed ....
-
-
 /**
  * Implementation of generic buuilder that uses XmlPull API to access
  * current default XmlPullParser and XmlSerializer.

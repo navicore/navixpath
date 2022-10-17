@@ -3,9 +3,6 @@ package org.xmlpull.v1.builder.impl;
 import org.xmlpull.v1.builder.XmlNamespace;
 import org.xmlpull.v1.builder.XmlBuilderException;
 
-/**
- * .
- */
 public class XmlNamespaceImpl implements XmlNamespace
 {
         

@@ -1,3 +1,4 @@
+package org.navimatrix.commons.concurrent;
 /*
  * Blazebot Computing
  * Licensed Materials - Property of Ed Sweeney
@@ -5,7 +6,6 @@
  *
  * @author Ed Sweeney <a href="http://www.edsweeney.net">
  */
-package org.navimatrix.commons.concurrent;
 
 /**
  * keep track of the version and build numbers

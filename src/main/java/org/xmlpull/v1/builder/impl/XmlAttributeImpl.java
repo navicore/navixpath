@@ -5,8 +5,6 @@ import org.xmlpull.v1.builder.XmlElement;
 import org.xmlpull.v1.builder.XmlNamespace;
 import org.xmlpull.v1.builder.XmlBuilderException;
 
-/**
- */
 public class XmlAttributeImpl implements XmlAttribute
 {
     private XmlElement owner_;

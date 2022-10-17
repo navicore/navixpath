@@ -1,4 +1,3 @@
-/* -*-             c-basic-offset: 4; indent-tabs-mode: nil; -*-  //------100-columns-wide------>|*/
 /*
  * Copyright (c) 2002 Extreme! Lab, Indiana University. All rights reserved.
  *

@@ -1,3 +1,8 @@
+<!-- ghmig:moved -->
+> **This repository has moved to [https://git.navicore.tech/navicore/navixpath](https://git.navicore.tech/navicore/navixpath).**
+>
+> The GitHub copy is archived and no longer maintained.
+
 NAVIXPATH
 ========
 
